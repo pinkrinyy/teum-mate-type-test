@@ -5,103 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#F7F8FA">
 <title>틈 | 메이트 매칭 테스트</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.css">
 <style>
-@font-face{font-family:NationalPension;src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/NPSfontBold.woff2') format('woff2');font-weight:700;font-display:swap}
-@font-face{font-family:NationalPension;src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/NPSfontExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
-@font-face{font-family:NationalPension;src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/NPSfontRegular.woff2') format('woff2');font-weight:400;font-display:swap}
-*{box-sizing:border-box}body{margin:0;background:#eef0f2;color:#080808;font-family:Pretendard,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;word-break:keep-all}button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible{outline:3px solid #245c38;outline-offset:5px}button:disabled{cursor:default}button:active{transform:translateY(1px)}
-.app{position:relative;max-width:412px;min-height:100dvh;margin:auto;background:#F7F8FA;overflow:hidden}section[hidden]{display:none!important}.intro,.quiz,.loading{min-height:max(892px,100dvh);position:relative}.intro{overflow:hidden;text-align:center;padding:286px 42px 306px}.intro-content{position:relative;z-index:1}.intro h1{font-size:23px;line-height:1.5;color:#499D68;margin:0;font-weight:750}.intro h1 small{display:block;font-size:14px;color:#090909;font-weight:700;margin-bottom:2px}.intro-description{margin:35px auto 36px;background:#fff;border-radius:30px;padding:35px 10px;min-height:112px;width:274px;max-width:100%;font-size:14px;font-weight:650;line-height:1.5}.primary{border:0;color:white;background:#71D369;border-radius:40px;font-weight:700;font-size:18px;min-height:60px;width:100%;padding:15px 14px}.primary:hover{background:#64c85d}.ornament{position:absolute;pointer-events:none}.intro-flower{width:430px;height:430px;top:-70px;left:-88px;transform:rotate(-16deg)}.intro-circle{width:235px;height:235px;right:-135px;top:-63px;border-radius:50%;background:linear-gradient(120deg,#91de85,#7fc482)}.intro-harmony{width:465px;height:465px;left:32px;top:645px;transform:rotate(15deg)}
-.quiz{padding:45px 14px 60px;background:#F6F7F9}.quiz-nav{height:45px;display:flex;align-items:center;gap:16px;padding:0 26px;background:#fff;border-radius:5px}.back{width:28px;height:40px;padding:0;border:0;background:none;color:#BFC4D7;display:grid;place-items:center}.back svg{width:14px;height:23px}.track{height:6px;background:#d9d9d9;border-radius:5px;flex:1;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#81ed7c,#FF9696);border-radius:5px;transition:width .25s}.counter{font-size:12px;color:#888;font-weight:700;white-space:nowrap}.quiz-body{text-align:center;padding:126px 26px 0}.question-number{font-family:NationalPension,Pretendard,sans-serif;font-weight:700;font-size:40px;line-height:1.25;color:#499D68;margin:0 0 38px}.question{width:274px;max-width:100%;min-height:112px;padding:26px 13px;margin:0 auto;background:#fff;border-radius:30px;font-size:20px;line-height:1.5;font-weight:750;display:flex;align-items:center;justify-content:center;white-space:pre-line}.options{display:flex;flex-direction:column;gap:14px;margin-top:36px}.option{border:0;background:#71D369;border-radius:40px;width:100%;padding:20px 22px;min-height:58px;color:white;font-size:15px;line-height:1.25;font-weight:700;white-space:pre-line;transition:background .15s}.option:hover,.option.selected{background:#499D68}.loading{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px}.loading svg{width:68px;height:68px;animation:turn 2.5s linear infinite}.loading h2{font-size:20px;color:#499D68}.loading p{color:#76857c;font-size:14px}@keyframes turn{to{transform:rotate(360deg)}}
-.result{background:linear-gradient(155deg,#499D68 0,#71ed70 290px);min-height:100dvh}.result-hero{height:288px;padding:56px 56px 0;position:relative;overflow:hidden}.result-art{position:absolute;left:-70px;top:-38px;width:227px;height:227px;pointer-events:none}.result[data-type="S"] .result-art{width:160px;height:160px;left:-38px;top:0}.result-heading{position:relative;color:white;margin:0 12px;font-size:22px;line-height:1.4;font-weight:700;white-space:nowrap}.result-heading small{display:block;font-size:16px;font-weight:700}.result-heading strong{font-family:NationalPension,Pretendard,sans-serif;font-size:25px}.tagline{position:relative;margin:31px 0 0;min-height:88px;border:2px solid #499D68;background:#F3F7E9;border-radius:21px;display:flex;align-items:center;justify-content:center;text-align:center;padding:15px 8px;font-size:14px;font-weight:600;line-height:1.5;white-space:pre-line}.paper{position:relative;margin-top:-28px;border-radius:30px 30px 0 0;background:white;padding:49px 43px 36px;min-height:790px}.paper:before{content:'';position:absolute;inset:9px 7px 0;border:1px solid #71D369;border-bottom:0;border-radius:30px 30px 0 0;pointer-events:none}.paperclip{position:absolute;right:41px;top:-20px;width:43px;height:88px;z-index:2}.description-heading{margin:0 5px 20px;font-size:16px;font-weight:750;color:#79897F;line-height:1.5}.description-heading span{background:linear-gradient(transparent 57%,#E2F3DF 57%);padding:0 5px}.description{font-size:14px;line-height:1.72;color:#79897F;margin:0 9px 25px;font-weight:500}.traits{margin:0 15px;background:#F3F7E9;border-radius:21px;padding:12px 16px;list-style:none;color:#505650}.traits li{position:relative;padding:13px 3px 13px 18px;font-size:12px;line-height:1.48}.traits li:before{content:'·';position:absolute;left:6px;font-weight:800}.traits li+li{border-top:1px solid #C3CEBC}.match-heading{margin:49px 0 26px;text-align:center;font-size:16px;font-weight:750;color:#56815A}.match-card{margin:0 12px;background:white;border-radius:22px;box-shadow:0 4px 9px #00000029;padding:21px 20px 18px}.match-person{display:flex;gap:12px;align-items:center}.match-icon{width:50px;height:50px;border-radius:21px;background:#71D369;display:grid;place-items:center;font-size:29px;flex-shrink:0}.match-person h3{font-size:16px;color:#499D68;margin:0 0 5px}.match-person p{font-size:10px;line-height:1.4;color:#7B8A80;margin:0;white-space:pre-line}.match-code{border-top:1px dashed #d1d1d1;margin-top:18px;padding-top:24px;text-align:center}.match-code p{font-size:10px;white-space:nowrap;color:#79897F;margin:0;font-weight:600}.match-code output{display:block;color:#499D68;font-size:29px;line-height:1.5;font-weight:750;letter-spacing:3px;margin-top:5px}.restart{margin-top:50px;min-height:52px;font-size:18px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:12px}.restart svg{width:20px;height:22px}
-@media(max-width:370px){.intro{padding-left:24px;padding-right:24px}.quiz-body{padding-left:12px;padding-right:12px}.result-hero{padding-left:35px;padding-right:35px}.paper{padding-left:24px;padding-right:24px}.result-heading{font-size:20px}.result-heading strong{font-size:23px}.quiz-nav{padding:0 14px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
-
-/* Match the original type test phone viewport. Long results scroll inside it. */
-html,body{height:100%;overflow:hidden}
-body{display:flex;align-items:center;justify-content:center;padding:22px}
+/* 국민연금체는 이 페이지 문구에 쓰인 글자만 남긴 서브셋(fonts/). 문구에 새 글자를 추가하면 서브셋을 다시 만들어야 함 */
+@font-face{font-family:NationalPension;src:url('fonts/NPSfontBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:NationalPension;src:url('fonts/NPSfontExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:NationalPension;src:url('fonts/NPSfontRegular.woff2') format('woff2');font-weight:400;font-display:swap}
+*{box-sizing:border-box}html,body{height:100%;overflow:hidden}body{margin:0;display:flex;align-items:center;justify-content:center;padding:22px;background:#eef0f2;color:#080808;font-family:Pretendard,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;word-break:keep-all}button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible{outline:3px solid #245c38;outline-offset:5px}button:disabled{cursor:default}button:active{transform:translateY(1px)}
+/* 데스크톱에서는 폰 목업 안에 보여주고, 긴 결과 화면은 그 안에서 스크롤 */
 .phone-frame{position:relative;width:min(410px,92vw);height:min(890px,92dvh);flex:none;padding:14px;background:#1b1e1c;border-radius:52px;box-shadow:0 40px 90px -30px rgba(20,30,24,.45)}
 .phone-frame:before{content:'';position:absolute;top:14px;left:50%;transform:translateX(-50%);width:120px;height:26px;background:#1b1e1c;border-radius:0 0 18px 18px;z-index:20;pointer-events:none}
 .phone-frame:after{content:'';position:absolute;bottom:24px;left:50%;transform:translateX(-50%);width:120px;height:4px;border-radius:3px;background:rgba(31,40,34,.18);z-index:20;pointer-events:none}
-.app{width:100%;height:100%;min-height:0;max-width:none;margin:0;border-radius:38px;overflow-x:hidden;overflow-y:auto;scrollbar-width:none;position:relative}
-.app::-webkit-scrollbar{display:none}
-.intro,.quiz,.loading{min-height:100%;height:auto}
-.intro{padding:0 28px;display:flex;align-items:center;justify-content:center;min-height:100%;isolation:isolate}
-.intro-content{width:100%;padding:120px 0}
-.intro-flower{width:105%;height:auto;aspect-ratio:1;top:-10%;left:-22%;z-index:-1}
-.intro-circle{z-index:-1}
-.intro-harmony{width:113%;height:auto;aspect-ratio:1;top:auto;bottom:-29%;left:8%;z-index:-1}
-.intro-description{margin:30px auto;padding:26px 10px;min-height:100px}
-.quiz{padding:45px 14px 40px;display:flex;flex-direction:column}
-.quiz-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:35px 12px 25px}
-.quiz-nav{padding:0 14px;flex:none}
-.question-number{margin-bottom:28px;font-size:36px}
-.question{font-size:18px;min-height:100px;padding:22px 12px}
-.options{width:100%;margin-top:28px}
-.option{padding:18px 16px;font-size:14px}
-.result{min-height:100%}
-.result-hero{padding-left:42px;padding-right:42px}
-.result-heading{margin-left:5px;margin-right:0;font-size:20px}
-.result-heading strong{font-size:23px}
-.result-heading small{font-size:14px}
-.paper{padding-left:28px;padding-right:28px;padding-bottom:42px}
-@media(max-height:700px){.intro-content{padding:90px 0}.intro-description{margin:22px auto;padding:22px 8px;min-height:88px}.quiz-body{padding-top:24px}.question-number{margin-bottom:20px}.question{min-height:86px}.options{margin-top:22px;gap:12px}.option{padding:15px 14px}}
-
-
-/* A single reference-sized composition keeps the artwork and copy in proportion. */
-.intro{height:100%;min-height:0;padding:0;display:block;overflow:hidden}
-.intro-layout{position:absolute;width:412px;height:892px;left:50%;top:50%;transform:translate(-50%,-50%) scale(var(--intro-scale, .85));transform-origin:center;isolation:isolate}
-.intro .intro-content{position:absolute;top:286px;left:42px;width:328px;padding:0}
-.intro .intro-description{width:274px;min-height:112px;padding:35px 10px;margin:35px auto 36px}
-.intro .intro-flower{width:430px;height:430px;top:-100px;left:-128px;aspect-ratio:auto;clip-path:none;transform:rotate(-16deg);z-index:-1}
-.intro .intro-circle{width:235px;height:235px;top:-63px;right:-135px;z-index:-1}
-.intro .intro-harmony{width:465px;height:465px;top:645px;bottom:auto;left:32px;aspect-ratio:auto;clip-path:none;transform:rotate(15deg);z-index:-1}
-
-/* On phones the device itself is the frame. Desktop keeps the preview mockup. */
+.app{position:relative;width:100%;height:100%;background:#F7F8FA;border-radius:38px;overflow-x:hidden;overflow-y:auto;scrollbar-width:none}.app::-webkit-scrollbar{display:none}section[hidden]{display:none!important}
+.quiz,.loading{min-height:100%;position:relative}
+/* 첫 화면은 412×892 기준 구도를 통째로 축소(fitIntro)해서 그림과 글 비율 유지 */
+.intro{position:relative;height:100%;overflow:hidden;text-align:center;isolation:isolate}.intro-layout{position:absolute;width:412px;height:892px;left:50%;top:50%;transform:translate(-50%,-50%) scale(var(--intro-scale, .85));transform-origin:center;isolation:isolate}.intro-content{position:absolute;z-index:1;top:286px;left:42px;width:328px}.intro h1{font-family:NationalPension,Pretendard,sans-serif;font-size:23px;line-height:1.5;color:#499D68;margin:0;font-weight:400}.intro h1 small{display:block;font-family:Pretendard,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:14px;color:#090909;font-weight:700;margin-bottom:2px}.intro-description{margin:35px auto 36px;background:#fff;border-radius:30px;padding:35px 10px;min-height:112px;width:274px;max-width:100%;font-size:14px;font-weight:650;line-height:1.5}.primary{border:0;color:white;background:#71D369;border-radius:40px;font-weight:700;font-size:18px;min-height:60px;width:100%;padding:15px 14px}@media(hover:hover){.primary:hover{background:#64c85d}}.ornament{position:absolute;pointer-events:none;z-index:-1}.intro-flower{width:430px;height:430px;top:-100px;left:-128px;transform:rotate(-16deg)}.intro-circle{width:235px;height:235px;right:-135px;top:-63px;border-radius:50%;background:linear-gradient(120deg,#91de85,#7fc482)}.intro-harmony{width:465px;height:465px;left:32px;top:645px;transform:rotate(15deg)}
+.quiz{padding:45px 14px 40px;background:#F6F7F9;display:flex;flex-direction:column}.quiz-nav{height:45px;flex:none;display:flex;align-items:center;gap:16px;padding:0 14px;background:#fff;border-radius:5px}.back{width:28px;height:40px;padding:0;border:0;background:none;color:#BFC4D7;display:grid;place-items:center}.back svg{width:14px;height:23px}.track{height:6px;background:#d9d9d9;border-radius:5px;flex:1;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#81ed7c,#FF9696);border-radius:5px;transition:width .25s}.counter{font-size:12px;color:#888;font-weight:700;white-space:nowrap}.quiz-body{flex:1;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:35px 12px 25px}.question-number{font-family:NationalPension,Pretendard,sans-serif;font-weight:700;font-size:36px;line-height:1.25;color:#499D68;margin:0 0 28px}.question{width:274px;max-width:100%;min-height:100px;padding:22px 12px;margin:0 auto;background:#fff;border-radius:30px;font-size:18px;line-height:1.5;font-weight:750;display:flex;align-items:center;justify-content:center;white-space:pre-line}.options{width:100%;display:flex;flex-direction:column;gap:14px;margin-top:28px}.option{border:0;background:#71D369;border-radius:40px;width:100%;padding:18px 16px;min-height:58px;color:white;font-size:14px;line-height:22px;font-weight:700;overflow-wrap:break-word;transition:background .15s}.option .word{white-space:nowrap}.option.selected{background:#499D68}@media(hover:hover){.option:hover{background:#499D68}}.loading{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px}.loading svg{width:68px;height:68px;animation:turn 2.5s linear infinite}.loading h2{margin:34px 0 0;font-family:NationalPension,Pretendard,sans-serif;font-weight:700;font-size:20px;color:#499D68}.loading p{margin:6px 0 0;color:#76857c;font-size:14px}@keyframes turn{to{transform:rotate(360deg)}}
+/* 결과 화면: 제목·소개·카드는 국민연금체 Bold(700), "○○ 메이트 유형"과 PC 코드는 ExtraBold(800).
+   750처럼 사이값을 주면 브라우저가 ExtraBold를 골라버리므로 700/800으로 딱 맞춘다. */
+.result{background:linear-gradient(155deg,#499D68 0,#71ed70 290px);min-height:100%}.result-hero{height:288px;padding:56px 42px 0;position:relative;overflow:hidden}.result-art{position:absolute;left:-70px;top:-38px;width:227px;height:227px;pointer-events:none;transform:rotate(-24deg)}.result[data-type="S"] .result-art{width:160px;height:160px;left:-38px;top:0}.result-heading{position:relative;color:white;margin:0 0 0 5px;font-family:NationalPension,Pretendard,sans-serif;font-size:20px;line-height:1.4;font-weight:700;white-space:nowrap}.result-heading small{display:block;font-size:14px}.result-heading strong{font-size:23px;font-weight:800;background:linear-gradient(transparent 57%,rgba(255,255,255,.3) 57%);padding:0 5px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* 한 줄 소개: Regular에 "○○ 하는 ○○파"만 Bold. 두 줄 각각 한 줄 고정, 폭에 맞춰 글자 크기 자동 축소(fitTagline) */
+.tagline{position:relative;margin:31px 0 0;min-height:88px;border:2px solid #499D68;background:#F3F7E9;border-radius:21px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:15px 8px;font-family:NationalPension,Pretendard,sans-serif;font-size:14px;font-weight:400;line-height:1.5}.tagline b{font-weight:700}.tagline-line{display:block;white-space:nowrap;width:100%;min-width:0;overflow:hidden}
+/* 종이가 클립 뒷다리를 가리고, 고리는 앞에 보이도록 */
+.result-sheet{position:relative;margin-top:-28px;isolation:isolate}.paper{position:relative;z-index:1;border-radius:30px 30px 0 0;background:white;padding:49px 28px 42px;min-height:790px}.paper:before{content:'';position:absolute;inset:9px 7px 0;border:1px solid #71D369;border-bottom:0;border-radius:30px 30px 0 0;pointer-events:none}.paperclip{position:absolute;right:41px;top:-20px;width:43px;height:88px;z-index:2;pointer-events:none}.paperclip-back{z-index:0}
+.description-heading{margin:0 5px 20px;font-family:NationalPension,Pretendard,sans-serif;font-size:16px;font-weight:700;color:#79897F;line-height:1.5}.description-heading span{background:linear-gradient(transparent 57%,#E2F3DF 57%);padding:0 5px}.description{font-size:14px;line-height:1.72;color:#79897F;margin:0 9px 25px;font-weight:500}.traits{margin:0 15px;background:#F3F7E9;border-radius:21px;padding:12px 16px;list-style:none;color:#505650}.traits li{position:relative;padding:13px 3px 13px 18px;font-size:12px;line-height:1.48}.traits li:before{content:'·';position:absolute;left:6px;font-weight:800}.traits li+li{border-top:1px solid #C3CEBC}.match-heading{margin:49px 0 26px;text-align:center;font-family:NationalPension,Pretendard,sans-serif;font-size:16px;font-weight:700;color:#56815A}.match-card{margin:0 12px;background:white;border-radius:22px;box-shadow:0 4px 9px #00000029;padding:21px 20px 18px;font-family:NationalPension,Pretendard,sans-serif;font-weight:700}.match-person{display:flex;gap:12px;align-items:center}.match-icon{width:50px;height:50px;border-radius:21px;background:#71D369;display:grid;place-items:center;font-size:29px;flex-shrink:0}.match-person h3{font-size:16px;color:#499D68;margin:0 0 5px}.match-person p{font-size:10px;line-height:1.4;color:#7B8A80;margin:0;white-space:pre-line}.match-code{border-top:1px dashed #d1d1d1;margin-top:18px;padding-top:24px;text-align:center}.match-code p{font-size:10px;white-space:nowrap;color:#79897F;margin:0}.match-code output{display:block;color:#499D68;font-size:29px;line-height:1.5;font-weight:800;letter-spacing:3px;margin-top:5px}.restart{margin-top:50px;min-height:52px;font-size:18px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:12px}.restart img{width:20px;height:20px;display:block}
+@media(max-height:700px){.quiz-body{padding-top:24px}.question-number{margin-bottom:20px}.question{min-height:86px}.options{margin-top:22px;gap:12px}.option{padding:15px 14px}}
+/* 폰에서는 기기 자체가 프레임 */
 @media(max-width:600px),(hover:none) and (pointer:coarse) and (max-width:950px){
- html,body{width:100%;height:100%;padding:0;background:#F7F8FA}
+ body{padding:0;background:#F7F8FA}
  .phone-frame{width:100%;height:100dvh;padding:0;border-radius:0;background:#F7F8FA;box-shadow:none}
  .phone-frame:before,.phone-frame:after{display:none}
- .app{border-radius:0;height:100%;max-width:none;-webkit-overflow-scrolling:touch}
+ .app{border-radius:0}
  .quiz{padding-top:max(24px,env(safe-area-inset-top));padding-bottom:max(28px,env(safe-area-inset-bottom))}
  .paper{padding-bottom:max(36px,env(safe-area-inset-bottom))}
 }
-
-/* Paper hides the rear leg; the clip loop remains in front. */
-.result-sheet{position:relative;margin-top:-28px;isolation:isolate}
-.result-sheet .paper{margin-top:0;z-index:1}
-.paperclip-back{z-index:0;pointer-events:none}
-.paperclip-front{z-index:2;pointer-events:none}
-
-/* 결과 화면 폰트 (10-10): 제목·한 줄 소개·"○○ 메이트 유형은..."·"이런 메이트와 잘 맞아요" 카드 전체는
-   국민연금체 Bold(700), 제목의 "○○ 메이트 유형"과 PC 코드는 국민연금체 ExtraBold(800).
-   굵기를 750처럼 사이값으로 두면 브라우저가 ExtraBold를 골라버리므로 700/800으로 딱 맞춘다. */
-.result-heading,.result-heading small,.description-heading,.description-heading span,
-.match-heading,.match-card,.match-person h3,.match-person p,.match-code p{font-family:NationalPension,Pretendard,sans-serif;font-weight:700}
-.result-heading strong,.match-code output{font-family:NationalPension,Pretendard,sans-serif;font-weight:800}
-/* 한 줄 소개: 국민연금체 Regular, "○○ 하는 ○○파" 부분만 Bold. 두 줄은 각각 한 줄로 고정하고
-   폰 폭에 맞춰 글자 크기를 자동으로 줄인다(fitTagline). */
-.tagline{font-family:NationalPension,Pretendard,sans-serif;font-weight:400;white-space:normal;flex-direction:column}
-.tagline b{font-weight:700}
-.tagline-line{display:block;white-space:nowrap;width:100%;min-width:0;overflow:hidden}
-/* 첫 화면 타이틀 "주거 메이트 매칭 테스트!"만 국민연금체 Regular (위 작은 글씨는 그대로) */
-.intro h1{font-family:NationalPension,Pretendard,sans-serif;font-weight:400}
-.intro h1 small{font-family:Pretendard,'Apple SD Gothic Neo','Malgun Gothic',sans-serif}
-/* 결과 화면 뒤 심볼 -24도 회전 */
-.result-art{transform:rotate(-24deg)}
-/* 다시하기 아이콘 (이미지) */
-.restart img{width:20px;height:20px;display:block}
-.loading h2{margin:34px 0 0}
-.loading p{margin:6px 0 0}
-.loading h2{font-family:NationalPension,Pretendard,sans-serif;font-weight:700}
-.option{white-space:normal;word-break:keep-all;overflow-wrap:break-word}
-.option .word{white-space:nowrap}
-body,button,input,textarea,select{letter-spacing:0}
-.option{line-height:22px}
-.result-heading strong{background:linear-gradient(transparent 57%,rgba(255,255,255,.3) 57%);padding:0 5px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
 </style>
 </head><body>
-<svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs><linearGradient id="pink" x2="1" y2="1"><stop stop-color="#FFD3D7"/><stop offset="1" stop-color="#FF9696"/></linearGradient><linearGradient id="green" x2="1" y2="1"><stop stop-color="#8BDC82"/><stop offset="1" stop-color="#69A585"/></linearGradient><symbol id="connection" viewBox="0 0 200 200"><path fill="url(#pink)" d="M0 0Q82 0 100 76Q118 0 200 0Q200 82 124 100Q200 118 200 200Q118 200 100 124Q82 200 0 200Q0 118 76 100Q0 82 0 0Z"/></symbol><symbol id="harmony" viewBox="0 0 200 200"><path fill="url(#green)" d="M100 28C45-32-32 45 28 100C-32 155 45 232 100 172C155 232 232 155 172 100C232 45 155-32 100 28Z"/><circle cx="100" cy="100" r="29" fill="#D9EFDB"/></symbol><symbol id="pink-harmony" viewBox="0 0 200 200"><path fill="url(#pink)" d="M100 28C45-32-32 45 28 100C-32 155 45 232 100 172C155 232 232 155 172 100C232 45 155-32 100 28Z"/><circle cx="100" cy="100" r="29" fill="#FFE9E9"/></symbol></defs></svg>
+<svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs><linearGradient id="pink" x2="1" y2="1"><stop stop-color="#FFD3D7"/><stop offset="1" stop-color="#FF9696"/></linearGradient><linearGradient id="green" x2="1" y2="1"><stop stop-color="#8BDC82"/><stop offset="1" stop-color="#69A585"/></linearGradient><symbol id="connection" viewBox="0 0 200 200"><path fill="url(#pink)" d="M0 0Q82 0 100 76Q118 0 200 0Q200 82 124 100Q200 118 200 200Q118 200 100 124Q82 200 0 200Q0 118 76 100Q0 82 0 0Z"/></symbol><symbol id="harmony" viewBox="0 0 200 200"><path fill="url(#green)" d="M100 28C45-32-32 45 28 100C-32 155 45 232 100 172C155 232 232 155 172 100C232 45 155-32 100 28Z"/><circle cx="100" cy="100" r="29" fill="#D9EFDB"/></symbol><symbol id="pink-harmony" viewBox="0 0 200 200"><path fill="url(#pink)" d="M100 28C45-32-32 45 28 100C-32 155 45 232 100 172C155 232 232 155 172 100C232 45 155-32 100 28Z"/></symbol></defs></svg>
 <div class="phone-frame"><main class="app">
 <section class="intro" id="intro"><div class="intro-layout"><svg class="ornament intro-flower" aria-hidden="true"><use href="#connection"/></svg><div class="ornament intro-circle"></div><svg class="ornament intro-harmony" aria-hidden="true"><use href="#harmony"/></svg><div class="intro-content"><h1><small>우리가 함께 살아간다면?</small>주거 메이트 매칭 테스트!</h1><p class="intro-description">칼같은 정산파? 다정한 대화파?<br>나의 진짜 주거 성향 찾고 메이트 매칭하자!</p><button class="primary" id="start">메이트 매칭 시작하기 →</button></div></div></section>
 <section class="quiz" id="quiz" hidden aria-label="메이트 유형 질문"><nav class="quiz-nav" aria-label="테스트 진행"><button class="back" id="back" aria-label="이전 질문"><svg viewBox="0 0 14 23" fill="none"><path d="m12 3-8 8.5 8 8.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></button><div class="track" role="progressbar" id="progress" aria-label="질문 진행률" aria-valuemin="0" aria-valuemax="6"><div class="fill" id="fill"></div></div><span class="counter" id="counter"></span></nav><div class="quiz-body"><h2 class="question-number" id="number"></h2><div class="question" id="question" tabindex="-1"></div><div class="options" id="options" aria-labelledby="question"></div></div></section>
@@ -118,8 +59,8 @@ new ResizeObserver(fitIntro).observe(introViewport);fitIntro();
     {
       text:'혼자 살면서 가장 채우고\n싶은 일상의 틈은?',
       options:[
-        {t:'숨만 쉬어도 나가는 월세, 생활비 부담이 너무 커', score:{S:1}},
-        {t:'혼자 사니 밤길도 무섭고 집안 보안도 걱정돼', score:{A:1}},
+        {t:'숨만 쉬어도 나가는 월세,\n생활비 부담이 너무 커', score:{S:1}},
+        {t:'혼자 사니 밤길도 무섭고\n집안 보안도 걱정돼', score:{A:1}},
         {t:'불 꺼진 쓸쓸한 집에 들어갈 때 외로움이 밀려와', score:{H:1}}
       ]
     },
@@ -171,7 +112,7 @@ H:{name:'힐링',prefix:'따뜻한 대화와 감정을 나누는',tagline:'혼�
 const $=id=>document.getElementById(id);let index=0,answers=[],pending=false,timer;
 function show(id){['intro','quiz','loading','result'].forEach(v=>$(v).hidden=v!==id);document.querySelector('.app').scrollTop=0;}
 function setWords(el,text){el.replaceChildren();text.split('\n').forEach((line,li)=>{if(li)el.appendChild(document.createElement('br'));line.split(' ').filter(Boolean).forEach((w,wi)=>{if(wi)el.appendChild(document.createTextNode(' '));const s=document.createElement('span');s.className='word';s.textContent=w;el.appendChild(s)})})}
-function render(){show('quiz');const q=questions[index];$('counter').textContent=(index+1)+'/6';$('number').textContent='Q'+(index+1)+'.';$('question').textContent=q.text;$('fill').style.width=((index+1)/questions.length*100)+'%';$('progress').setAttribute('aria-valuenow',index+1);$('options').replaceChildren();q.options.forEach((opt,i)=>{const button=document.createElement('button');button.className='option';setWords(button,index===0&&i===0?'숨만 쉬어도 나가는 월세,\n생활비 부담이 너무 커':index===0&&i===1?'혼자 사니 밤길도 무섭고\n집안 보안도 걱정돼':opt.t);button.onclick=()=>choose(i);$('options').appendChild(button)});pending=false;$('back').disabled=false;$('question').focus({preventScroll:true});}
+function render(){show('quiz');const q=questions[index];$('counter').textContent=(index+1)+'/6';$('number').textContent='Q'+(index+1)+'.';$('question').textContent=q.text;$('fill').style.width=((index+1)/questions.length*100)+'%';$('progress').setAttribute('aria-valuenow',index+1);$('options').replaceChildren();q.options.forEach((opt,i)=>{const button=document.createElement('button');button.className='option';setWords(button,opt.t);button.onclick=()=>choose(i);$('options').appendChild(button)});pending=false;$('back').disabled=false;$('question').focus({preventScroll:true});}
 function choose(i){if(pending)return;pending=true;answers[index]=i;Array.from($('options').children).forEach((b,j)=>{b.disabled=true;b.classList.toggle('selected',j===i)});$('back').disabled=true;timer=setTimeout(()=>{index++;if(index<questions.length)render();else{show('loading');timer=setTimeout(finish,1200)}},280);}
 function calculate(){const score={S:0,A:0,H:0};answers.forEach((answer,i)=>{const add=questions[i].options[answer].score||{};Object.keys(add).forEach(k=>score[k]+=add[k])});return Object.keys(score).reduce((a,b)=>score[b]>score[a]?b:a,'S');}
 const TAGLINE_BOLD={S:'깔끔한 1/N을 지향하는 실속파',A:'약속을 철저히 지키는 원칙주의자',H:'일상의 소소한 온기를 나누는 낭만파'};
